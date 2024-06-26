@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="css/animate.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Crud System</title>
+  </head>
+  <body class="bg-dark">
+    <section
+      class="crwd-board w-75 m-auto my-3 overflow-hidden rounded-2 pb-3 bg-white"
+    >
+      <h1
+        class="text-center fw-bold text-uppercase my-4 animate__animated animate__fadeInDown cssanimation effect3d"
+      >
+        Crud System
+      </h1>
+      <div
+        class="form-floating mb-3 mx-3 animate__animated animate__fadeInLeft"
+      >
+        <input
+          type="text"
+          class="form-control"
+          oninput="validationInputs(this)"
+          id="productName"
+          placeholder=""
+        />
+        <label for="productName">Product Name</label>
+      </div>
+      <div
+        class="form-floating mb-3 mx-3 animate__animated animate__fadeInRight"
+      >
+        <input
+          list="Category"
+          type="text"
+          class="form-control"
+          oninput="validationInputs(this)"
+          id="productCategory"
+          placeholder=""
+        />
+        <label for="productCategory">Product Category</label>
+        <datalist id="Category">
+          <option value="Tv" />
+          <option value="Mobile" />
+          <option value="Screen" />
+          <option value="Laptop" />
+          <option value="Computer" />
+        </datalist>
+      </div>
+      <div
+        class="form-floating mb-3 mx-3 animate__animated animate__fadeInLeft"
+      >
+        <input
+          type="number"
+          class="form-control"
+          oninput="validationInputs(this)"
+          id="productPrice"
+          placeholder=""
+        />
+        <label for="productPrice">Product Price</label>
+      </div>
+      <div
+        class="form-floating mb-3 mx-3 animate__animated animate__fadeInRight"
+      >
+        <textarea
+          class="form-control"
+          oninput="validationInputs(this)"
+          id="productDescription"
+          placeholder=""
+        ></textarea>
+        <label for="productDescription">Product Description</label>
+      </div>
+      <div
+        class="form-floating mb-4 mx-3 animate__animated animate__fadeInLeft"
+      >
+        <input type="file" class="form-control" id="img" placeholder="" />
+        <label for="productPrice">Product Imge</label>
+      </div>
+      <div class="mx-3 d-flex justify-content-start">
+        <button class="CartBtn text-white" id="addProduct" onclick="addProduct()">
+          <span class="IconContainer">
+            <i class="fa fa-cart-plus" aria-hidden="true"></i>
+          </span>
+          <p class="text">Add Product</p>
+        </button>
+        <button
+          onclick="Updating()"
+          id="updateProduct"
+          class="btn btn-warning rounded-2 d-none"
+        >
+          Update Product
+        </button>
+      </div>
+    </section>
+    <div
+      class="form-floating w-50 m-auto mb-3"
+      data-aos="fade-up"
+      data-aos-offset="50"
+    >
+      <input
+        type="text"
+        class="form-control shadow-none rounded-3"
+        id="search"
+        placeholder=""
+        oninput="search()"
+      />
+      <label for="productPrice">Search By Product Name</label>
+    </div>
+    <section class="product my-5">
+      <div class="container">
+        <div class="row gy-4" id="products"></div>
+      </div>
+    </section>
+    <script src="js/main.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/yesiamrocks/cssanimation.io@1.0.3/letteranimation.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script>
+      new WOW().init();
+    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>
